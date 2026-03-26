@@ -1,0 +1,12 @@
+langchain
+langchain_community
+TextLoader
+PyMuPDF
+PyPDF
+pandas
+sentence_transformers
+chromadb
+uuid
+langchain-groq
+langchain.prompt
+-e .

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Assistant</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .chat-container {
+      width: 420px;
+      height: 600px;
+      background: #111827;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      padding: 15px;
+      background: #22c55e;
+      text-align: center;
+      color: black;
+      font-weight: bold;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .message {
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 75%;
+    }
+
+    .user {
+      background: #0ea5e9;
+      margin-left: auto;
+    }
+
+    .bot {
+      background: #374151;
+      margin-right: auto;
+    }
+
+    form {
+      display: flex;
+      border-top: 1px solid #333;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      padding: 10px;
+      background: #22c55e;
+      border: none;
+      cursor: pointer;
+      color: black;
+    }
+
+    .clear-btn {
+      width: 100%;
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="chat-container">
+
+  <div class="chat-header">AI Assistant</div>
+
+  <div class="chat-box">
+    {% for chat in chat_history %}
+      <div class="message user">{{ chat.question }}</div>
+      <div class="message bot">{{ chat.answer }}</div>
+    {% endfor %}
+  </div>
+
+  <form method="POST" action="{{url_for('startup')}}">
+    <input type="text" name="question" placeholder="Ask something..." required />
+    <button type="submit">Send</button>
+  </form>
+
+  <form action="/clear" method="get">
+    <button type="submit" class="clear-btn">Clear Chat</button>
+  </form>
+
+</div>
+
+</body>
+</html>

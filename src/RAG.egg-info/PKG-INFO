@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: RAG
+Version: 0.0.0
+Author: jck
+Author-email: jck@maurices.com
+Requires-Dist: langchain
+Requires-Dist: langchain_community
+Requires-Dist: TextLoader
+Requires-Dist: PyMuPDF
+Requires-Dist: PyPDF
+Requires-Dist: pandas
+Requires-Dist: sentence_transformers
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist

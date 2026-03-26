@@ -1,0 +1,7 @@
+langchain
+langchain_community
+TextLoader
+PyMuPDF
+PyPDF
+pandas
+sentence_transformers
