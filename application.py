@@ -4,7 +4,7 @@ from data_loader import load_all_documents, clean_text
 from embedding import Embedding
 from vector_store import Vector_Store
 from retriever import Retriever
-from main import main
+
 from llm_output_generation import LLM_output
 
 application = Flask(__name__)
